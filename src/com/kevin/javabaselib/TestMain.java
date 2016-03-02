@@ -1,7 +1,5 @@
 package com.kevin.javabaselib;
 
-import com.kevin.javabaselib.instance.GsonTestDemo;
-
 public class TestMain
 {
 	/**
@@ -18,7 +16,7 @@ public class TestMain
 		// System.out.println(ValidateUtils.checkMobileNumberValid(mobile));
 		// regextest();
 
-		GsonTestDemo.testGson();
+//		GsonTestDemo.testGson();
 
 		long sum = 0;
 		long fac = 1;
