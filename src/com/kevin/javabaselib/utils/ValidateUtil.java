@@ -377,7 +377,7 @@ public class ValidateUtil {
 	}
 
 	/**
-	 * 验证file是否比file2�?
+	 * 验证file是否比file2新
 	 * 
 	 * @param file
 	 * @param file2
