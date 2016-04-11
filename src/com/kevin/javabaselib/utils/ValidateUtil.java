@@ -396,9 +396,8 @@ public class ValidateUtil {
 
 
 	/**
-	 * 判断是否是空的列�?
+	 * 判断是否是空的迭代器
 	 * 
-	 * @param list
 	 * @return
 	 */
 	public static boolean isNull(java.util.Iterator<?> iterator) {
