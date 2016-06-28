@@ -15,8 +15,8 @@ public class CmdUtils {
     }
 
     public static void main(String[] args) {
-//        String cmd = "ping www.baidu.com";
-        String cmd = "notepad";
+        String cmd = "ping www.baidu.com";
+//        String cmd = "notepad";
 
 
         runCmd(cmd);
