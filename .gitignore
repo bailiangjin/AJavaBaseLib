@@ -1,11 +1,13 @@
 # Created by .ignore support plugin
 
+#mac os
+.DS_Store
+
 #idea
 .idea/misc.xml
 #*.iml
 
-
-#Java template
+#Java Temporary Files
 *.class
 out
 bin
