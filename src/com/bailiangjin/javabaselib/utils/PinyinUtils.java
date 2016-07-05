@@ -1,7 +1,7 @@
 package com.bailiangjin.javabaselib.utils;
 
-import opensource.jpinyin.PinyinFormat;
-import opensource.jpinyin.PinyinHelper;
+import com.github.stuxuhai.jpinyin.PinyinFormat;
+import com.github.stuxuhai.jpinyin.PinyinHelper;
 
 /**
  * Author:  liangjin.bai
