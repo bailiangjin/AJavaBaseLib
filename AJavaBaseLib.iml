@@ -7,7 +7,7 @@
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
-    <orderEntry type="library" name="AJavaBaseLib" level="project" />
     <orderEntry type="library" name="libs" level="project" />
+    <orderEntry type="library" name="jpinyin-1.1.5" level="project" />
   </component>
 </module>
