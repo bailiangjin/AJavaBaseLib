@@ -6,12 +6,12 @@ public class TestMain {
      */
     public static void main(String[] args) {
 
-        String osName = System.getProperties().getProperty("os.name");
-        if(osName.toLowerCase().contains("mac")){
-
-        }
-
-        System.out.println(osName);
+//        String osName = System.getProperties().getProperty("os.name");
+//        if (osName.toLowerCase().contains("mac")) {
+//
+//        }
+//
+//        System.out.println(osName);
         // String gmail = "3b32cdfe@sin1a0000000.com.com.cm";
         //
         // System.out.println(isEmailFormat(gmail));
@@ -34,6 +34,19 @@ public class TestMain {
 //            sum += fac;
 //        }
 //        System.out.println(sum);
+
+        int i = 1;
+
+        switch (i) {
+            case 1:
+                System.out.println("1");
+            case 0:
+                System.out.println("0");
+                break;
+            default:
+                System.out.println("default");
+
+        }
     }
 
 }

@@ -9,49 +9,47 @@ import java.util.List;
 
 /**
  * Gson 工具类
- * 
+ *
  * @author blj
- * 
  */
-public class GsonUtils {
-    private volatile static GsonUtils instance = null;
-    private static Gson gson = null;
-
-    public static GsonUtils getInstance() {
-        if (null == instance) {
-            synchronized (GsonUtils.class) {
-                if (null == instance) {
-                    instance = new GsonUtils();
-                }
-            }
-        }
-        return instance;
-    }
+public enum GsonUtils {
+    INSTANCE;
+    private Gson gson = null;
 
     private GsonUtils() {
         gson = new Gson();
     }
 
-    public <T> T toObj(String json, Class<T> T) {
-        return gson.fromJson(json, T);
+
+    public  <T extends Object> T toObj(String json) {
+        if (StringUtils.isEmpty(json)) {
+            return null;
+        }
+        Type type = new TypeToken<T>() {
+        }.getType();
+        return (T) gson.fromJson(json, type.getClass());
     }
 
     public String toJson(Object obj) {
         return gson.toJson(obj);
     }
-    
-    
+
+
     /**
-     * 将json 字符串转换为 String List
-     * 
-     * @param listJsonStr
-     * @return String list
+     * 将json array 字符串转换为  List
+     *
+     * @param jsonArrayStr json array 字符串
+     * @return List<T>
      */
-    public List<String> parsJson2StringList(String listJsonStr) {
+    public  <T extends Object> List<T> parsJsonArrayStr2List(String jsonArrayStr) {
+
+        if (StringUtils.isEmpty(jsonArrayStr)) {
+            return null;
+        }
         Type type = new TypeToken<ArrayList<String>>() {
         }.getType();
 
-        List<String> list = gson.fromJson(listJsonStr, type);
+        List<T> list = gson.fromJson(jsonArrayStr, type);
 
         if (null != list) {
             return list;
@@ -59,10 +57,9 @@ public class GsonUtils {
         return null;
     }
 
-    public Gson getGson(){
+    public Gson getGson() {
         return gson;
     }
 
-  
 
 }
