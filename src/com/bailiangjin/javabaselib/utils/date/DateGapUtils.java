@@ -1,11 +1,9 @@
-package com.bailiangjin.javabaselib.utils;
-
-import com.bailiangjin.javabaselib.utils.date.SetDatePointUtils;
+package com.bailiangjin.javabaselib.utils.date;
 
 import java.util.Calendar;
 import java.util.Date;
 
-public class DateGapUtils extends DateBaseUtils {
+public class DateGapUtils {
 
 
     /**

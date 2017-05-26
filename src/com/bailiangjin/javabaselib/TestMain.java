@@ -1,6 +1,7 @@
 package com.bailiangjin.javabaselib;
 
-import com.bailiangjin.javabaselib.utils.DateGapUtils;
+import com.bailiangjin.javabaselib.utils.date.DateGapUtils;
+import com.bailiangjin.javabaselib.utils.date.DateTransformUtils;
 
 import java.util.Date;
 
@@ -26,10 +27,10 @@ public class TestMain {
         // regextest();
 
 //		GsonTestDemo.testGson();
-        Date date = DateGapUtils.getDate("2017-05-27","yyyy-M-d");
+        Date date = DateTransformUtils.getDate("2017-05-27","yyyy-M-d");
 
         System.out.println("date:" + DateGapUtils.isTomorrow(date.getTime()));
-        System.out.println("date:" + DateGapUtils.getCurrentTimeMillis());
+        System.out.println("date:" + DateTransformUtils.getCurrentTimeMillis());
 //        long sum = 0;
 //        long fac = 1;
 //        for (int i = 1; i <= 20; i++) {

@@ -1,8 +1,7 @@
-package com.bailiangjin.javabaselib.utils;
+package com.bailiangjin.javabaselib.utils.date;
 
 import java.sql.Timestamp;
 import java.text.DateFormat;
-import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.Date;
@@ -12,7 +11,7 @@ import java.util.TimeZone;
 /**
  * Created by bailiangjin on 2017/5/26.
  */
-public abstract class DateBaseUtils {
+public abstract class DateTransformUtils {
 
     public static final String CN_TIME_FORMAT_HH_mm = "HH:mm";
     public static final String CN_TIME_FORMAT_HH_mm_ss = "HH:mm:ss";
@@ -23,17 +22,6 @@ public abstract class DateBaseUtils {
     public static final String CN_TIME_FORMAT_yyyy_M_d_HH_mm_ss = "yyyy年M月d日 HH:mm:ss";
 
     public static final String EN_TIME_FORMAT_yyyy_M_d_HH_mm_ss = "yyyy-M-d HH:mm:ss";
-
-
-
-    /**
-     * 获取当前时间戳 string
-     *
-     * @return
-     */
-    public static String getCurrentTimestampString() {
-        return Long.toString(System.currentTimeMillis());
-    }
 
     /**
      * 获取当前时间戳 long
@@ -72,26 +60,6 @@ public abstract class DateBaseUtils {
         return date;
     }
 
-
-    /**
-     * 指定格式字符串转换为Date
-     *
-     * @param patternedDateStr 符合pattern 的日期字符串
-     * @param pattern          格式
-     * @return
-     */
-    public static Date getDate(String patternedDateStr, String pattern) {
-        SimpleDateFormat sdf = new SimpleDateFormat(pattern);
-        Date date = null;
-        try {
-            date = sdf.parse(patternedDateStr);
-        } catch (ParseException localParseException) {
-            localParseException.printStackTrace();
-        }
-        return date;
-    }
-
-
     /**
      * 解析时间字符串
      *
@@ -99,8 +67,20 @@ public abstract class DateBaseUtils {
      * @param format
      * @return
      */
-    public static Date getCnDate(String dateString, String format) {
+    public static Date getDate(String dateString, String format) {
         return getDate(dateString, format, Locale.CHINESE, TimeZone.getDefault());
+    }
+
+    /**
+     * 格式化日期 中国大陆
+     *
+     * @param date
+     * @param format
+     * @return
+     */
+    public static String getDateString(Date date, String format) {
+        SimpleDateFormat sdf = new SimpleDateFormat(format, Locale.CHINESE);
+        return sdf.format(date);
     }
 
     /**
@@ -113,8 +93,7 @@ public abstract class DateBaseUtils {
      * @return
      */
     public static Date getDate(String dateString, String format, Locale locale, TimeZone timeZone) {
-        SimpleDateFormat sdf = (SimpleDateFormat) DateFormat.getDateTimeInstance(DateFormat.LONG, DateFormat.LONG,
-                locale);
+        SimpleDateFormat sdf = (SimpleDateFormat) DateFormat.getDateTimeInstance(DateFormat.LONG, DateFormat.LONG, locale);
         sdf.applyPattern(format);
         sdf.setTimeZone(timeZone);
         Date date = null;
@@ -148,12 +127,12 @@ public abstract class DateBaseUtils {
 
     /**
      * 根据服务器时间和服务器时区 获取当地时间 的时间戳
-     * @param time
+     * @param timeMillis
      * @param serverTimeZone
      * @return
      */
-    public static long getLocalTimeMillis(long time, String serverTimeZone) {
-        Date date = new Date(time);
+    public static long getLocalTimeMillis(long timeMillis, String serverTimeZone) {
+        Date date = new Date(timeMillis);
         if (date != null) {
             return getLocalDate(date, serverTimeZone).getTime();
         }
@@ -178,15 +157,5 @@ public abstract class DateBaseUtils {
     }
 
 
-    /**
-     * 格式化日期 中国大陆
-     *
-     * @param date
-     * @param pattern
-     * @return
-     */
-    public static String dateToString_CN(Date date, String pattern) {
-        SimpleDateFormat sdf = new SimpleDateFormat(pattern, Locale.CHINESE);
-        return sdf.format(date);
-    }
+
 }
