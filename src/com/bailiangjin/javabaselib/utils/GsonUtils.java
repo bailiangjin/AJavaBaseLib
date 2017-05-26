@@ -30,6 +30,21 @@ public enum GsonUtils {
         return (T) gson.fromJson(json, type.getClass());
     }
 
+    public  <T> T toObj(String json, Class<T> clazz) {
+
+        if (StringUtils.isEmpty(json) || null == clazz) {
+            return null;
+        }
+        try {
+            return gson.fromJson(json, clazz);
+        }catch (Exception e){
+            e.printStackTrace();
+            System.out.print("json date format error:"+e.getMessage());
+            return null;
+        }
+
+    }
+
     public String toJson(Object obj) {
         return gson.toJson(obj);
     }
