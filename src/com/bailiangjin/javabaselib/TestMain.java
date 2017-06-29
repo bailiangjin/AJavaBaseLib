@@ -1,10 +1,5 @@
 package com.bailiangjin.javabaselib;
 
-import com.bailiangjin.javabaselib.utils.date.DateGapUtils;
-import com.bailiangjin.javabaselib.utils.date.DateTransformUtils;
-
-import java.util.Date;
-
 public class TestMain {
     /**
      * @param args
@@ -27,10 +22,10 @@ public class TestMain {
         // regextest();
 
 //		GsonTestDemo.testGson();
-        Date date = DateTransformUtils.getDate("2017-05-27","yyyy-M-d");
-
-        System.out.println("date:" + DateGapUtils.isTomorrow(date.getTime()));
-        System.out.println("date:" + DateTransformUtils.getCurrentTimeMillis());
+//        Date date = DateTransformUtils.getDate("2017-05-27","yyyy-M-d");
+//
+//        System.out.println("date:" + DateGapUtils.isTomorrow(date.getTime()));
+//        System.out.println("date:" + DateTransformUtils.getCurrentTimeMillis());
 //        long sum = 0;
 //        long fac = 1;
 //        for (int i = 1; i <= 20; i++) {
@@ -40,18 +35,25 @@ public class TestMain {
 //        }
 //        System.out.println(sum);
 
-        int i = 1;
+//        int i = 1;
+//
+//        switch (i) {
+//            case 1:
+//                System.out.println("1");
+//            case 0:
+//                System.out.println("0");
+//                break;
+//            default:
+//                System.out.println("default");
+//
+//        }
 
-        switch (i) {
-            case 1:
-                System.out.println("1");
-            case 0:
-                System.out.println("0");
-                break;
-            default:
-                System.out.println("default");
+        System.out.println(Type.FORMAL.name());
+    }
 
-        }
+    enum Type{
+        TEST,
+        FORMAL
     }
 
 }
