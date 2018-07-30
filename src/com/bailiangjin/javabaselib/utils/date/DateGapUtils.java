@@ -182,6 +182,11 @@ public class DateGapUtils {
     }
 
 
+    /**
+     * 获取 某一小时的 起始时间
+     * @param timeMillis
+     * @return
+     */
     public static TimeInfo getAnyHourStartAndEndTime(long timeMillis) {
         Calendar localCalendarStart = Calendar.getInstance();
         localCalendarStart.setTime(new Date(timeMillis));
@@ -199,7 +204,7 @@ public class DateGapUtils {
 
 
     /**
-     * 获取某一分钟起始时间
+     * 获取 某一分钟的 起始时间
      *
      * @return
      */

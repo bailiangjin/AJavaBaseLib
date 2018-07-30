@@ -7,8 +7,6 @@ import java.util.Calendar;
  */
 public class SetDatePointUtils {
 
-    //------------------------年月日时分初始值设置
-
 
     public final static void set2YearStart(Calendar calendar) {
         calendar.set(Calendar.MONTH, 0);
